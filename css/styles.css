@@ -13,7 +13,7 @@ ul {
 
 .layout {
   display: grid;
-  grid-template-rows: 1fr 1fr 7fr;
+  grid-template-rows: 0.5fr 0.5fr 7fr;
   grid-template-columns: 1fr 4fr;
   grid-template-areas:
     "sidebar header"
@@ -147,17 +147,103 @@ ul {
   grid-area: main;
   background-color: rgb(225, 232, 239);
   padding: 1em;
+  grid-template-areas: "projects announcements-trending";
+  gap: 1em;
 }
 
 .projects-grid {
+  grid-area: projects;
   display: grid;
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-rows: 20px repeat(3, 1fr);
   grid-template-columns: repeat(2, 1fr);
   gap: 1.5em;
+  grid-template-areas:
+    "projects-title projects-title"
+    "super-cool-project less-cool-project"
+    "impossible-app easy-peasy-app"
+    "ad-blocker money-maker";
+}
+
+.projects-title {
+  grid-area: projects-title;
+}
+
+.super-cool-project {
+  grid-area: super-cool-project;
+}
+
+.less-cool-project {
+  grid-area: less-cool-project;
+}
+
+.impossible-app {
+  grid-area: impossible-app;
+}
+
+.easy-peasy-app {
+  grid-area: easy-peasy-app;
+}
+
+.ad-blocker {
+  grid-area: ad-blocker;
+}
+
+.money-maker {
+  grid-area: money-maker;
 }
 
 .card {
   background-color: white;
   border-radius: 10px;
   box-shadow: 0px 0px 5px grey;
+  border-left: 8px solid rgb(248, 117, 86);
+}
+
+.announcements-trending-grid {
+  grid-area: announcements-trending;
+  display: grid;
+  grid-template-rows: 20px repeat(2, 1fr);
+  gap: 1.5em;
+  grid-template-areas:
+    "announcements-title"
+    "announcements"
+    "trending";
+}
+
+.announcements,
+.trending {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px grey;
+  padding: 2em;
+}
+
+.announcements p,
+.trending p {
+  font-size: 0.7em;
+  color: rgb(95, 95, 95);
+  margin-bottom: 10px;
+}
+
+.announcements h5,
+.trending h5 {
+  margin-top: 10px;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 16px 0;
+}
+
+.announcements-title {
+  grid-area: announcements-title;
+}
+
+.announcements {
+  grid-area: announcements;
+}
+
+.trending {
+  grid-area: trending;
 }
