@@ -202,11 +202,12 @@ ul {
 .announcements-trending-grid {
   grid-area: announcements-trending;
   display: grid;
-  grid-template-rows: 20px repeat(2, 1fr);
+  grid-template-rows: 20px 1fr 20px 1fr;
   gap: 1.5em;
   grid-template-areas:
     "announcements-title"
     "announcements"
+    "trending-title"
     "trending";
 }
 
@@ -244,6 +245,98 @@ hr {
   grid-area: announcements;
 }
 
+.trending-title {
+  grid-area: trending-title;
+}
+
 .trending {
+  display: grid;
   grid-area: trending;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-areas:
+    "avatar1 user1"
+    "avatar2 user2"
+    "avatar3 user3"
+    "avater4 user4";
+}
+
+.avatar1 {
+  grid-area: avatar1;
+}
+
+.user1 {
+  grid-area: user1;
+}
+
+.avatar2 {
+  grid-area: avatar2;
+}
+
+.user2 {
+  grid-area: user2;
+}
+
+.avatar3 {
+  grid-area: avatar3;
+}
+
+.user3 {
+  grid-area: user3;
+}
+
+.avatar4 {
+  grid-area: avatar4;
+}
+
+.user4 {
+  grid-area: user4;
+}
+
+.prof-picture-icon-trending {
+  height: 3em;
+  width: 3em;
+  border-radius: 50%;
+  overflow: hidden;
+  place-self: center;
+}
+
+.prof-picture-icon-trending img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.user1,
+.user2,
+.user3,
+.user4 {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  justify-content: baseline;
+}
+
+/*------flexbox segue-------*/
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 2em;
+  gap: 1em;
+}
+
+.card p {
+  color: rgb(95, 95, 95);
+}
+
+.svg-div {
+  align-self: flex-end;
+  display: flex;
+  gap: 1em;
+}
+
+.svg-div svg {
+  height: 1em;
+  width: 1em;
+  vertical-align: text-top;
 }
